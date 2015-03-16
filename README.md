@@ -12,8 +12,8 @@ configurable search index and an advanced search form.
 The respository is organized as an Eclipse-Project.
 
 ROOT
-+ src	  source files
-+ test	  some JUnit testing routines
++ src  source files
++ test some JUnit testing routines
 + lib  contains all required libraries to run SearchBooster
 
 
@@ -48,14 +48,14 @@ This program is part of the course "Realization of an I&K Application System"
 at the Hamburg Universitiy of Technology.
 
 The course was supervised by
-	- Prof. Dr. Sibylle Schupp
-	- Dipl.-Inform. Rainer Marrone
+* Prof. Dr. Sibylle Schupp
+* Dipl.-Inform. Rainer Marrone
 
 Participants of the MRound-Developer-Team:
-	- B.Sc. Jan Eric Lange
-	- B.Sc. Kai Torben Ohlhus
-	- B.Sc. Michael Kunert
-	- B.Sc. Tobias Schulz
+* B.Sc. Jan Eric Lange
+* B.Sc. Kai Torben Ohlhus
+* B.Sc. Michael Kunert
+* B.Sc. Tobias Schulz
 
 ```
  __  __ _____                       _   _  _   _____             
