@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified">
+
+    <xsd:element name="SearchBooster">
+    	<xsd:complexType>
+    		<xsd:choice minOccurs="1" maxOccurs="1">
+    			<xsd:element name="Request" maxOccurs="1">
+    				<xsd:complexType>
+    					<xsd:choice minOccurs="1" maxOccurs="1">
+    						<xsd:element name="Abort" type="xsd:string"
+    							maxOccurs="1">
+    						</xsd:element>
+    						<xsd:element name="Index" maxOccurs="1">
+    							<xsd:complexType>
+    								<xsd:choice minOccurs="1">
+    									<xsd:element name="Info"
+    										type="xsd:string" maxOccurs="1">
+    									</xsd:element>
+    									<xsd:element name="Change"
+    										maxOccurs="1">
+    										<xsd:complexType>
+    											<xsd:sequence
+    												minOccurs="1" maxOccurs="1">
+    												<xsd:element
+    													name="ForceRebuild" type="xsd:boolean" maxOccurs="1">
+    												</xsd:element>
+    												<xsd:element
+    													name="Path" type="PathType" minOccurs="0"
+    													maxOccurs="unbounded">
+    												</xsd:element>
+    											</xsd:sequence>
+    										</xsd:complexType>
+    									</xsd:element>
+    								</xsd:choice>
+
+    							</xsd:complexType>
+    						</xsd:element>
+    						<xsd:element name="Search" maxOccurs="1">
+    							<xsd:complexType>
+    								<xsd:sequence minOccurs="1"
+    									maxOccurs="1">
+    									<xsd:element name="Path"
+    										maxOccurs="unbounded" type="PathType" minOccurs="0">
+    									</xsd:element>
+    									<xsd:element name="Parameter"
+    										maxOccurs="unbounded" type="ParameterType" minOccurs="0">
+    									</xsd:element>
+    								</xsd:sequence>
+    							</xsd:complexType>
+    						</xsd:element>
+    					</xsd:choice>
+    				</xsd:complexType>
+    			</xsd:element>
+    			<xsd:element name="Response" maxOccurs="1"
+    				minOccurs="1">
+    				<xsd:complexType>
+    					<xsd:sequence minOccurs="1">
+    						<xsd:element name="StatusCode"
+    							minOccurs="1">
+    							<xsd:complexType>
+    								<xsd:sequence minOccurs="1"
+    									maxOccurs="1">
+    									<xsd:element name="ID"
+    										type="xsd:string" minOccurs="1">
+    									</xsd:element>
+    									<xsd:element name="Message"
+    										type="xsd:string" minOccurs="1">
+    									</xsd:element>
+    								</xsd:sequence>
+    							</xsd:complexType>
+    						</xsd:element>
+    						<xsd:choice minOccurs="0" maxOccurs="1">
+    							<xsd:element name="Search"
+    								minOccurs="1" maxOccurs="1">
+    								<xsd:complexType>
+    									<xsd:sequence minOccurs="1"
+    										maxOccurs="1">
+    										<xsd:element
+    											name="Result" maxOccurs="unbounded" minOccurs="0">
+    											<xsd:complexType>
+    												<xsd:sequence
+    													maxOccurs="1" minOccurs="1">
+    													<xsd:element
+    														name="URL" type="xsd:string" maxOccurs="1" minOccurs="1">
+    													</xsd:element>
+    													<xsd:element
+    														name="ModificationDate" type="xsd:dateTime" maxOccurs="1" minOccurs="1">
+    													</xsd:element>
+    													<xsd:element
+    														name="ContentMatch" type="xsd:boolean" maxOccurs="1" minOccurs="1">
+    													</xsd:element>
+    												</xsd:sequence>
+    											</xsd:complexType>
+    										</xsd:element>
+    									</xsd:sequence>
+    								</xsd:complexType>
+    							</xsd:element>
+    							<xsd:element name="IndexContent"
+    								minOccurs="1" maxOccurs="1">
+    								<xsd:complexType>
+    									<xsd:sequence minOccurs="1"
+    										maxOccurs="1">
+    										<xsd:element name="Path"
+    											type="PathType" minOccurs="0" maxOccurs="unbounded">
+    										</xsd:element>
+    									</xsd:sequence>
+    								</xsd:complexType>
+    							</xsd:element>
+    						</xsd:choice>
+    					</xsd:sequence>
+
+    				</xsd:complexType>
+    			</xsd:element>
+    		</xsd:choice>
+    		<xsd:attribute name="Version" type="xsd:string" use="required"></xsd:attribute>
+    	</xsd:complexType>
+    </xsd:element>
+
+
+
+
+
+    <xsd:complexType name="PathType">
+    	<xsd:sequence minOccurs="1" maxOccurs="1">
+    		<xsd:element name="URL" type="xsd:string" maxOccurs="1"></xsd:element>
+    		<xsd:element name="RecursionDepth" type="xsd:int" minOccurs="1"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ParameterType">
+    	<xsd:sequence minOccurs="1">
+    		<xsd:element minOccurs="0" name="FileName"
+    			type="xsd:string">
+    		</xsd:element>
+    		<xsd:element minOccurs="0" name="ModificationDate">
+    			<xsd:complexType>
+    				<xsd:sequence minOccurs="1">
+    					<xsd:element minOccurs="0" name="Begin"
+    						type="xsd:dateTime">
+    					</xsd:element>
+    					<xsd:element minOccurs="0" name="End"
+    						type="xsd:dateTime">
+    					</xsd:element>
+    				</xsd:sequence>
+    			</xsd:complexType>
+    		</xsd:element>
+    		<xsd:element minOccurs="0" name="Content">
+    			<xsd:complexType>
+    				<xsd:choice minOccurs="1" maxOccurs="1">
+    					<xsd:element maxOccurs="1" name="Document">
+    						<xsd:complexType>
+    							<xsd:sequence minOccurs="1"
+    								maxOccurs="1">
+    								<xsd:element minOccurs="0"
+    									maxOccurs="1" name="SearchString" type="xsd:string">
+    								</xsd:element>
+    							</xsd:sequence>
+    						</xsd:complexType>
+    					</xsd:element>
+    					<xsd:element maxOccurs="1" name="Music">
+    						<xsd:complexType>
+    							<xsd:sequence minOccurs="1"
+    								maxOccurs="1">
+    								<xsd:element minOccurs="0"
+    									maxOccurs="1" name="Interpret" type="xsd:string">
+    								</xsd:element>
+    								<xsd:element minOccurs="0"
+    									maxOccurs="1" name="Album" type="xsd:string">
+    								</xsd:element>
+    							</xsd:sequence>
+    						</xsd:complexType>
+    					</xsd:element>
+    					<xsd:element maxOccurs="1" name="Picture"
+    						type="xsd:string">
+    					</xsd:element>
+    					<xsd:element maxOccurs="1" name="Video"
+    						type="xsd:string">
+    					</xsd:element>
+    				</xsd:choice>
+    			</xsd:complexType>
+    		</xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

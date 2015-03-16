@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SearchBooster Version="2011-12-12_1">
+	<Request>
+		<Search>
+			<Path>
+				<URL>/Root/ist/gut</URL>
+				<RecursionDepth>5</RecursionDepth>
+			</Path>
+			<Parameter>
+				<FileName>TestFile.txt</FileName>
+				<ModificationDate>
+					<Begin>2002-10-10T12:00:00+05:00</Begin>
+					<End>2002-10-10T12:00:00+05:00</End>
+				</ModificationDate>
+			</Parameter>
+		</Search>
+	</Request>
+</SearchBooster>

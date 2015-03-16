@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+    <xsd:element name="GuiConfig">
+    	<xsd:complexType>
+    		<xsd:sequence minOccurs="1" maxOccurs="1">
+    			<xsd:element name="SearchPathConfig" maxOccurs="1"
+    				minOccurs="1">
+    				<xsd:complexType>
+    					<xsd:sequence minOccurs="1" maxOccurs="1">
+    						<xsd:element name="SearchPathSet"
+    							maxOccurs="unbounded" minOccurs="0">
+    							<xsd:complexType>
+    								<xsd:sequence minOccurs="1"
+    									maxOccurs="1">
+    									<xsd:element name="Name"
+    										type="xsd:string" maxOccurs="1" minOccurs="1">
+    									</xsd:element>
+    									<xsd:element name="SearchPath"
+    										maxOccurs="unbounded" minOccurs="0">
+    										<xsd:complexType>
+    											<xsd:sequence
+    												minOccurs="1" maxOccurs="1">
+    												<xsd:element
+    													name="Path" type="xsd:string" maxOccurs="1"
+    													minOccurs="1">
+    												</xsd:element>
+    												<xsd:element
+    													name="RecursionDepth" type="xsd:int" maxOccurs="1"
+    													minOccurs="1">
+    												</xsd:element>
+    											</xsd:sequence>
+    										</xsd:complexType>
+    									</xsd:element>
+    								</xsd:sequence>
+    							</xsd:complexType>
+    						</xsd:element>
+    					</xsd:sequence>
+    				</xsd:complexType>
+    			</xsd:element>
+    			<xsd:element name="SearchParameterConfig" maxOccurs="1"
+    				minOccurs="1">
+    				<xsd:complexType>
+    					<xsd:sequence maxOccurs="1" minOccurs="1">
+    						<xsd:element name="SearchParameterDnfSets"
+    							maxOccurs="unbounded" minOccurs="0">
+    							<xsd:complexType>
+    								<xsd:sequence maxOccurs="1"
+    									minOccurs="1">
+    									<xsd:element name="Name"
+    										type="xsd:string" maxOccurs="1" minOccurs="1">
+    									</xsd:element>
+    									<xsd:element
+    										name="SearchParameterSet" maxOccurs="unbounded"
+    										minOccurs="0" type="ParameterType">
+    									</xsd:element>
+    								</xsd:sequence>
+    							</xsd:complexType>
+    						</xsd:element>
+    					</xsd:sequence>
+    				</xsd:complexType>
+    			</xsd:element>
+    			<xsd:element name="SettingsConfig" maxOccurs="1" minOccurs="1">
+    				<xsd:complexType>
+    					<xsd:sequence maxOccurs="1" minOccurs="1">
+    						<xsd:element name="ShowInvisibleFiles"
+    							type="xsd:boolean" maxOccurs="1" minOccurs="1">
+    						</xsd:element>
+    						<xsd:element name="DefaultIndexSearch"
+    							type="xsd:boolean" maxOccurs="1" minOccurs="1">
+    						</xsd:element>
+    					</xsd:sequence>
+    				</xsd:complexType>
+    			</xsd:element>
+    		</xsd:sequence>
+    	</xsd:complexType>
+    </xsd:element>
+    
+    <xsd:complexType name="ParameterType">
+    	<xsd:sequence minOccurs="1">
+    		<xsd:element minOccurs="0" name="FileName"
+    			type="xsd:string">
+    		</xsd:element>
+    		<xsd:element minOccurs="0" name="ModificationDate">
+    			<xsd:complexType>
+    				<xsd:sequence minOccurs="1">
+    					<xsd:element minOccurs="0" name="Begin"
+    						type="xsd:dateTime">
+    					</xsd:element>
+    					<xsd:element minOccurs="0" name="End"
+    						type="xsd:dateTime">
+    					</xsd:element>
+    				</xsd:sequence>
+    			</xsd:complexType>
+    		</xsd:element>
+    		<xsd:element minOccurs="0" name="Content">
+    			<xsd:complexType>
+    				<xsd:choice minOccurs="1" maxOccurs="1">
+    					<xsd:element maxOccurs="1" name="Document">
+    						<xsd:complexType>
+    							<xsd:sequence minOccurs="1"
+    								maxOccurs="1">
+    								<xsd:element minOccurs="0"
+    									maxOccurs="1" name="SearchString" type="xsd:string">
+    								</xsd:element>
+    							</xsd:sequence>
+    						</xsd:complexType>
+    					</xsd:element>
+    					<xsd:element maxOccurs="1" name="Music">
+    						<xsd:complexType>
+    							<xsd:sequence minOccurs="1"
+    								maxOccurs="1">
+    								<xsd:element minOccurs="0"
+    									maxOccurs="1" name="Interpret" type="xsd:string">
+    								</xsd:element>
+    								<xsd:element minOccurs="0"
+    									maxOccurs="1" name="Album" type="xsd:string">
+    								</xsd:element>
+    							</xsd:sequence>
+    						</xsd:complexType>
+    					</xsd:element>
+    					<xsd:element maxOccurs="1" name="Picture"
+    						type="xsd:string">
+    					</xsd:element>
+    					<xsd:element maxOccurs="1" name="Video"
+    						type="xsd:string">
+    					</xsd:element>
+    				</xsd:choice>
+    			</xsd:complexType>
+    		</xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
