@@ -1,3 +1,0 @@
-SearchBooster is an advanced desktop document search tool based upon [Apache Lucene](http://lucene.apache.org/) and [Apache Tika](http://tika.apache.org/). It provides a configurable search index and an advanced search form.
-
-<a href='http://searchbooster.googlecode.com/files/Search_booster_screenshot.jpg'><img src='http://searchbooster.googlecode.com/files/Search_booster_screenshot.jpg' width='75%' /></a>
